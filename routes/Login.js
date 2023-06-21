@@ -152,6 +152,15 @@ const Login = async (_, res) => {
 
 
         await verifyAndLogin(page)
+        await page.setRequestInterception(true);
+
+        page.on('request', (request) => {
+          if (request.resourceType() === 'image') {
+            request.abort();
+          } else {
+            request.continue();
+          }
+        });
         console.log('Logged in')
 
         await page.goto(`https://www.spidersrc.com/h5/product/goods/44dd9db594dcb947`, { waitUntil: 'networkidle0' })
