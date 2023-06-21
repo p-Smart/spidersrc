@@ -16,7 +16,6 @@ const connToPuppeteer = async () => {
     const browser = await pup.connect({
         browserWSEndpoint: `wss://chrome.browserless.io?token=${BROWSERLESS_KEY}`,
         defaultViewport: { width: viewportWidth, height: viewportHeight },
-        // args: ['--no-sandbox', '--disable-setuid-sandbox'],
     }, {timeout: 0})
 
     const page = await browser.newPage()
