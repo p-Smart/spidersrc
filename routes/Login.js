@@ -197,7 +197,7 @@ const Login = async (_, res) => {
 
         await page.waitForFunction( () => document.querySelectorAll('.van-popup')[1] && document.querySelectorAll('.van-popup')[1].textContent === 'Successful purchase' )
 
-        await Accounts.updateOne({email: email}, {last_task_done: new Date()})
+        await Accounts.updateOne({email: email}, {last_task_done: new Date(), balance: balance})
         console.log('Task done for', email)
 
     }

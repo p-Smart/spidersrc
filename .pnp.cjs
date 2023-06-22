@@ -12,14 +12,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],\
     "dependencyTreeRoots": [\
       {\
-        "name": "onlineminingbot",\
+        "name": "spidersrc",\
         "reference": "workspace:."\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["onlineminingbot", ["workspace:."]]\
+      ["spidersrc", ["workspace:."]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["express", "npm:4.18.2"],\
             ["mongoose", "npm:7.1.2"],\
             ["nodemon", "npm:2.0.22"],\
-            ["puppeteer-core", "virtual:04cd9e6319041ea3b0cfe61e86d0e55cc90202936d6af7b2839ff0b9f617ec24c4f674db3a0593bd897756c6e187a3c4840bb3e6a77eb10cde7b5857aedef065#npm:20.4.0"],\
+            ["puppeteer-core", "virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0"],\
             ["tesseract.js", "npm:4.0.6"],\
             ["user-agents", "npm:1.0.1391"]\
           ],\
@@ -79,10 +79,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:1.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/@puppeteer-browsers-virtual-bb820a3912/0/cache/@puppeteer-browsers-npm-1.4.0-cb94af5607-fc93cefd0e.zip/node_modules/@puppeteer/browsers/",\
+        ["virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:1.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/@puppeteer-browsers-virtual-68c2169e2e/0/cache/@puppeteer-browsers-npm-1.4.0-cb94af5607-fc93cefd0e.zip/node_modules/@puppeteer/browsers/",\
           "packageDependencies": [\
-            ["@puppeteer/browsers", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:1.4.0"],\
+            ["@puppeteer/browsers", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:1.4.0"],\
             ["@types/typescript", null],\
             ["debug", "virtual:e714f098eec2890786df24995e6ee2cd9564f3224ffb149fe6697dc7949a7129817204ca1b98a97059d530d645ca4b8fd4d4f51f399efc8a232369c09f0aea08#npm:4.3.4"],\
             ["extract-zip", "npm:2.0.1"],\
@@ -541,10 +541,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:0.4.10", {\
-          "packageLocation": "./.yarn/__virtual__/chromium-bidi-virtual-46f0cebe48/0/cache/chromium-bidi-npm-0.4.10-9653b980af-ea592ac80c.zip/node_modules/chromium-bidi/",\
+        ["virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:0.4.10", {\
+          "packageLocation": "./.yarn/__virtual__/chromium-bidi-virtual-ae3a2a2f08/0/cache/chromium-bidi-npm-0.4.10-9653b980af-ea592ac80c.zip/node_modules/chromium-bidi/",\
           "packageDependencies": [\
-            ["chromium-bidi", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:0.4.10"],\
+            ["chromium-bidi", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:0.4.10"],\
             ["@types/devtools-protocol", null],\
             ["devtools-protocol", "npm:0.0.1120988"],\
             ["mitt", "npm:3.0.0"]\
@@ -2179,23 +2179,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["onlineminingbot", [\
-        ["workspace:.", {\
-          "packageLocation": "./",\
-          "packageDependencies": [\
-            ["onlineminingbot", "workspace:."],\
-            ["axios", "npm:1.4.0"],\
-            ["dotenv", "npm:16.0.3"],\
-            ["express", "npm:4.18.2"],\
-            ["mongoose", "npm:7.1.2"],\
-            ["nodemon", "npm:2.0.22"],\
-            ["puppeteer-core", "virtual:04cd9e6319041ea3b0cfe61e86d0e55cc90202936d6af7b2839ff0b9f617ec24c4f674db3a0593bd897756c6e187a3c4840bb3e6a77eb10cde7b5857aedef065#npm:20.4.0"],\
-            ["tesseract.js", "npm:4.0.6"],\
-            ["user-agents", "npm:1.0.1391"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
       ["opencollective-postinstall", [\
         ["npm:2.0.3", {\
           "packageLocation": "./.yarn/cache/opencollective-postinstall-npm-2.0.3-954643c36b-0a68c5cef1.zip/node_modules/opencollective-postinstall/",\
@@ -2428,18 +2411,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:04cd9e6319041ea3b0cfe61e86d0e55cc90202936d6af7b2839ff0b9f617ec24c4f674db3a0593bd897756c6e187a3c4840bb3e6a77eb10cde7b5857aedef065#npm:20.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/puppeteer-core-virtual-21d4d82d0b/0/cache/puppeteer-core-npm-20.4.0-7d36628275-a5a6e27653.zip/node_modules/puppeteer-core/",\
+        ["virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/puppeteer-core-virtual-ca5669d1f5/0/cache/puppeteer-core-npm-20.4.0-7d36628275-a5a6e27653.zip/node_modules/puppeteer-core/",\
           "packageDependencies": [\
-            ["puppeteer-core", "virtual:04cd9e6319041ea3b0cfe61e86d0e55cc90202936d6af7b2839ff0b9f617ec24c4f674db3a0593bd897756c6e187a3c4840bb3e6a77eb10cde7b5857aedef065#npm:20.4.0"],\
-            ["@puppeteer/browsers", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:1.4.0"],\
+            ["puppeteer-core", "virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0"],\
+            ["@puppeteer/browsers", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:1.4.0"],\
             ["@types/typescript", null],\
-            ["chromium-bidi", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:0.4.10"],\
+            ["chromium-bidi", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:0.4.10"],\
             ["cross-fetch", "npm:3.1.6"],\
             ["debug", "virtual:e714f098eec2890786df24995e6ee2cd9564f3224ffb149fe6697dc7949a7129817204ca1b98a97059d530d645ca4b8fd4d4f51f399efc8a232369c09f0aea08#npm:4.3.4"],\
             ["devtools-protocol", "npm:0.0.1120988"],\
             ["typescript", null],\
-            ["ws", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:8.13.0"]\
+            ["ws", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:8.13.0"]\
           ],\
           "packagePeers": [\
             "@types/typescript",\
@@ -2752,6 +2735,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["memory-pager", "npm:1.5.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["spidersrc", [\
+        ["workspace:.", {\
+          "packageLocation": "./",\
+          "packageDependencies": [\
+            ["spidersrc", "workspace:."],\
+            ["axios", "npm:1.4.0"],\
+            ["dotenv", "npm:16.0.3"],\
+            ["express", "npm:4.18.2"],\
+            ["mongoose", "npm:7.1.2"],\
+            ["nodemon", "npm:2.0.22"],\
+            ["puppeteer-core", "virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0"],\
+            ["tesseract.js", "npm:4.0.6"],\
+            ["user-agents", "npm:1.0.1391"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["ssri", [\
@@ -3201,10 +3201,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:8.13.0", {\
-          "packageLocation": "./.yarn/__virtual__/ws-virtual-33cc573620/0/cache/ws-npm-8.13.0-26ffa3016a-53e991bbf9.zip/node_modules/ws/",\
+        ["virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:8.13.0", {\
+          "packageLocation": "./.yarn/__virtual__/ws-virtual-5d9c967a9f/0/cache/ws-npm-8.13.0-26ffa3016a-53e991bbf9.zip/node_modules/ws/",\
           "packageDependencies": [\
-            ["ws", "virtual:21d4d82d0ba42d8f77e8d5c0b172b3a6d06f1b3fb8870aa1c55fea70589f25327c2a83fc3bbbcd4f643698ec74d705afaa483d3d1068e1680af5368733405439#npm:8.13.0"],\
+            ["ws", "virtual:ca5669d1f51882fa781f62bebb3a1b0056452f1aa867d0d5af232339538356d5c5f9b23b41d47440979b6f6db702b48f0bd8092daf038d509e1db1bb8d389bbc#npm:8.13.0"],\
             ["@types/bufferutil", null],\
             ["@types/utf-8-validate", null],\
             ["bufferutil", null],\

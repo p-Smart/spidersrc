@@ -24,13 +24,21 @@ app.get('/register', Register)
 // app.get('/test', async (_, res) => {
 //   try{
 //     const emails = [
-//       'anuoluwababatunde48@mocvn.com',
-//       'nkemadams40@amozix.com',
-//       'okagbueikeh93@tenvil.com',
-//       'okonkwookagbue66@steveix.com',
-//       'sadiqolawale97@amozix.com',
-//       'kaluadeolu77@tgvis.com',
-//       'adeoladuru46@tenvil.com',
+//       'suleimananikulapo@yahoo.com',
+//       'igbofalade86@gmail.com',
+//       'ezeojukwu26@gmail.com',
+//       'patienceemeka69@gmail.com',
+//       'idowuadeyemi57@yahoo.com',
+//       'ngozimustapha76@gmail.com',
+//       'uzomauwais47@gmail.com',
+//       'abdulahikalu54@gmail.com',
+//       'akpanoshodi74@gmail.com',
+//       'nwabuezeabdullahi29@gmail.com',
+//       'nwabuezekalu21@gmail.com',
+//       'suleimanfashola63@yahoo.com',
+//       'adaezeakintola13@gmail.com',
+//       'chukwuemekaokoye@yahoo.com',
+//       'zeinablai@yahoo.com',
 //     ]
 //     const documents = emails.map(email => ({
 //       email: email,
