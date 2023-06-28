@@ -32,7 +32,7 @@ const Login = async (_, res) => {
 
         var {email, password, ref_link} = account
         console.log(email)
-        // await Accounts.updateOne({email: email}, {working: true})
+        await Accounts.updateOne({email: email}, {working: true})
 
         res.json({
             success: true,
@@ -81,7 +81,7 @@ const Login = async (_, res) => {
         }
     }
     finally{
-        // await changeWorking(Accounts, email)
+        await changeWorking(Accounts, email)
     }
 }
 

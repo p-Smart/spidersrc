@@ -8,7 +8,9 @@ const Register = async (_, res) => {
         const headers = genRandomHeader()
         const {email, password} = await genDetail()
 
-        const {ref_level, ref_link, ...rest} = (await Accounts.aggregate([
+        const newDiscoveryDate = new Date('2023-06-28T11:19:45.736+00:00')
+
+        const account = (await Accounts.aggregate([
             { $match: {
                 ref_level: {
                     $nin: [null, undefined],
@@ -16,10 +18,20 @@ const Register = async (_, res) => {
                     // $eq: 1
                 },
                 ref_link: {$nin: [null, undefined, ""]},
+                reg_date: {$gt: newDiscoveryDate}
             } },
             { $sample: { size: 1 } }
         ]))[0]
-        
+
+        if(!account){
+            return res.json({
+                success: true,
+                message: 'No referral link to create account under'
+            })
+        }
+
+
+        const {ref_level, ref_link, ...rest} = account
 
         const refEmail = rest.email
 
@@ -44,6 +56,7 @@ const Register = async (_, res) => {
             balance: 0,
             reg_date: new Date(),
             ref_level: ref_level + 1,
+            referred_by: refEmail,
             working: false
         })
         console.log(newAcct)

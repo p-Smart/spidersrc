@@ -7,6 +7,7 @@ const Login = require('./routes/Login')
 const Login2 = require('./routes/Login2')
 const Register = require('./routes/Register')
 const Register2 = require('./routes/Register2')
+const GetRefs = require('./routes/GetRefs')
 
 
 connectToDB()
@@ -25,6 +26,9 @@ app.get('/register', Register2)
 
 
 app.get('/login', Login2)
+
+
+app.get('/get-refs', GetRefs)
 
 
 // app.get('/test', async (_, res) => {

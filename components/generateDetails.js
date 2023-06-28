@@ -17,6 +17,8 @@ const genRandomHeader = () => ({
     "Cookie": 'domain=spidersrc.com; path=/'
 })
 
+const genPassword = (email) => `${email.split('@')[0]}${Math.floor(Math.random() * 900 + 100)}`
+
 const genDetail = async () => {
     const {user_email} = (await RandomDetails.aggregate([
         {$match: { }},
@@ -32,7 +34,7 @@ const genDetail = async () => {
 
     return {
         email: email,
-        password: 'PrAnnie_2018',
+        password: genPassword(email),
     }
 } 
 

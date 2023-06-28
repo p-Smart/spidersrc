@@ -27,6 +27,7 @@ const AccountsModel = new Schema({
     ref_link: detailConfig,
     ref_code: detailConfig,
     reg_date: dateConfig,
+    referred_by: detailConfig,
     working: boolConfig
   })
 
