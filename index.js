@@ -85,5 +85,11 @@ app.use((req, res, next) => {
 
 
 
-app.listen(process.env.PORT || 3000, () => console.log(`Server running...`))
+const listen = async () => {
+  console.log( await connectToDB() )
+  app.listen(process.env.PORT || 3000, () => console.log(`Server running...`))
+}
+
+
+listen()
 
