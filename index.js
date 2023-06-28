@@ -18,10 +18,6 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/', KeepAppAlive)
 
-// app.get('/login', Login)
-
-// app.get('/register', Register)
-
 app.get('/register', Register2)
 
 
