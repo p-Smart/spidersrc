@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nodemon", "npm:2.0.22"],\
             ["puppeteer-core", "virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0"],\
             ["tesseract.js", "npm:4.0.6"],\
-            ["user-agents", "npm:1.0.1391"]\
+            ["user-agents", "npm:1.0.1423"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -2749,7 +2749,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nodemon", "npm:2.0.22"],\
             ["puppeteer-core", "virtual:055f27a2d51c74bc2b7cd50c62b6c713ba23426b5cd23ccb41904718d92cd8569c9427981325c3f1761f047d8a9bac8c0457c08bd395bcca6794a6109a4510b7#npm:20.4.0"],\
             ["tesseract.js", "npm:4.0.6"],\
-            ["user-agents", "npm:1.0.1391"]\
+            ["user-agents", "npm:1.0.1423"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -3050,10 +3050,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["user-agents", [\
-        ["npm:1.0.1391", {\
-          "packageLocation": "./.yarn/cache/user-agents-npm-1.0.1391-987a101355-d6367e39a0.zip/node_modules/user-agents/",\
+        ["npm:1.0.1423", {\
+          "packageLocation": "./.yarn/cache/user-agents-npm-1.0.1423-96e428fd30-0c02c94120.zip/node_modules/user-agents/",\
           "packageDependencies": [\
-            ["user-agents", "npm:1.0.1391"],\
+            ["user-agents", "npm:1.0.1423"],\
             ["dot-json", "npm:1.3.0"],\
             ["lodash.clonedeep", "npm:4.5.0"]\
           ],\

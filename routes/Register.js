@@ -6,11 +6,28 @@ const delay = {delay: 0}
 const Register = async (_, res) => {
     
     try{
-
-        var {browser, page} = await connToPuppeteer()
         const {email, password} = await genDetail()
 
-        await page.goto('https://www.spidersrc.com/h5/register/705955')
+        const {ref_level, ref_link, ...rest} = (await Accounts.aggregate([
+            { $match: {
+                ref_level: {
+                    $nin: [null, undefined],
+                    $lt: 3,
+                    // $eq: 1
+                },
+                ref_link: {$nin: [null, undefined, ""]},
+            } },
+            { $sample: { size: 1 } }
+        ]))[0]
+        
+
+        const refEmail = rest.email
+
+        console.log(`Creating account with ${refEmail}'s referral code`)
+        
+        var {browser, page} = await connToPuppeteer()
+
+        await page.goto(ref_link)
         console.log('page loaded')
 
         await Promise.all([
@@ -31,9 +48,6 @@ const Register = async (_, res) => {
             passwordInput.dispatchEvent(new Event('input', { bubbles: true }));
           }, email, password);
           
-        // await page.type(`input#van-field-1-input`, email, delay)
-
-        // await page.type(`input#van-field-2-input`, password, delay)
         console.log('Done typing')
 
         await page.evaluate( () => document.querySelector('button').click() )
@@ -58,14 +72,13 @@ const Register = async (_, res) => {
             })
         }
 
-        // await page.waitForFunction( () => document.querySelector('button').textContent !== 'Sign up' )
-
         const response = await Accounts.create({
             email: email,
             password: password,
             last_task_done: new Date(Date.now() - 24 * 60 * 60 * 1000),
             balance: 0,
             reg_date: new Date(),
+            ref_level: ref_level + 1,
             working: false
         })
         console.log(response)

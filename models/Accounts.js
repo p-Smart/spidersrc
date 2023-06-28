@@ -23,6 +23,9 @@ const AccountsModel = new Schema({
     username: detailConfig,
     last_task_done: dateConfig,
     balance: Number,
+    ref_level: Number,
+    ref_link: detailConfig,
+    ref_code: detailConfig,
     reg_date: dateConfig,
     working: boolConfig
   })

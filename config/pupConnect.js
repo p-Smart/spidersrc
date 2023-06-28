@@ -2,21 +2,22 @@ const pup = require('puppeteer-core')
 const {BROWSERLESS_KEY} = process.env
 const executablePath = `C:/Users/Prince/.cache/puppeteer/chrome/win64-113.0.5672.63/chrome-win64/chrome.exe`
 
-
-const defaultTimeout = 60 * 1000
+const proxyServer = `154.6.88.144:8080`
+const defaultTimeout = 30 * 1000
 const viewportWidth = 375
 const viewportHeight = 667
 const connToPuppeteer = async () => {
-    // const browser = await pup.launch({
-    //     headless: 'new',
-    //     executablePath: executablePath,
-    //     defaultViewport: { width: viewportWidth, height: viewportHeight }
-    // })
-
-    const browser = await pup.connect({
-        browserWSEndpoint: `wss://chrome.browserless.io?token=${BROWSERLESS_KEY}`,
+    const browser = await pup.launch({
+        headless: 'new',
+        executablePath: executablePath,
         defaultViewport: { width: viewportWidth, height: viewportHeight },
-    }, {timeout: 0})
+        // args: [`--proxy-server=${proxyServer}`],
+    })
+
+    // const browser = await pup.connect({
+    //     browserWSEndpoint: `wss://chrome.browserless.io?token=${BROWSERLESS_KEY}`,
+    //     defaultViewport: { width: viewportWidth, height: viewportHeight },
+    // }, {timeout: 0})
 
     const page = await browser.newPage()
     await page.setDefaultTimeout(defaultTimeout)

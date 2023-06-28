@@ -90,6 +90,15 @@ const waitForTaskPage = async (page, count=0) => {
     }
 }
 
+const waitForInvitePage = async (page, count=0) => {
+    try{
+        count !== 0 && await page.reload()
+        await page.waitForFunction( () => document.querySelector('.link') !== null, {timeout: 5000} )
+    }catch(err){
+        await waitForTaskPage(page, ++count)
+    }
+}
+
 const changeWorking = async (Accounts, email) => {
     try{
         await Accounts.updateOne({email: email}, {working: false})
@@ -110,6 +119,9 @@ const Login = async (_, res) => {
                 last_task_done: {$lt: twentyFourHoursAgo},
                 working: false
             } },
+            { $sort: {
+                ref_level: 1
+            } },
             { $sample: { size: 1 } }
         ]))[0]
 
@@ -120,7 +132,7 @@ const Login = async (_, res) => {
             })
         }
 
-        var {email, password} = account
+        var {email, password, ref_link} = account
         console.log(email)
         await Accounts.updateOne({email: email}, {working: true})
 
@@ -197,8 +209,20 @@ const Login = async (_, res) => {
 
         await page.waitForFunction( () => document.querySelectorAll('.van-popup')[1] && document.querySelectorAll('.van-popup')[1].textContent === 'Successful purchase' )
 
-        await Accounts.updateOne({email: email}, {last_task_done: new Date(), balance: balance})
+        await Accounts.updateOne({email: email}, {last_task_done: new Date(), balance: parseFloat(balance)})
         console.log('Task done for', email)
+
+        if(!ref_link){
+            await page.goto(`https://www.spidersrc.com/h5/share`, { waitUntil: 'networkidle0' })
+            console.log('Gone to Invite Page')
+
+            await waitForInvitePage(page)
+
+            const refCode = await page.evaluate( () => document.querySelector('.link').textContent )
+
+            await Accounts.updateOne({email: email}, {ref_link: refCode})
+            console.log('Gotten referral code for', email)
+        }
 
     }
     catch(err){

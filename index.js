@@ -2,10 +2,11 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const KeepAppAlive = require('./routes/KeepAppAlive')
-const Accounts = require('./models/Accounts')
 const connectToDB = require('./config/dbConnect')
 const Login = require('./routes/Login')
+const Login2 = require('./routes/Login2')
 const Register = require('./routes/Register')
+const Register2 = require('./routes/Register2')
 
 
 connectToDB()
@@ -16,52 +17,24 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/', KeepAppAlive)
 
-app.get('/login', Login)
+// app.get('/login', Login)
 
-app.get('/register', Register)
+// app.get('/register', Register)
+
+app.get('/register', Register2)
+
+
+app.get('/login', Login2)
 
 
 // app.get('/test', async (_, res) => {
 //   try{
-//     const emails = [
-//       'suleimananikulapo@yahoo.com',
-//       'igbofalade86@gmail.com',
-//       'ezeojukwu26@gmail.com',
-//       'patienceemeka69@gmail.com',
-//       'idowuadeyemi57@yahoo.com',
-//       'ngozimustapha76@gmail.com',
-//       'uzomauwais47@gmail.com',
-//       'abdulahikalu54@gmail.com',
-//       'akpanoshodi74@gmail.com',
-//       'nwabuezeabdullahi29@gmail.com',
-//       'nwabuezekalu21@gmail.com',
-//       'suleimanfashola63@yahoo.com',
-//       'adaezeakintola13@gmail.com',
-//       'chukwuemekaokoye@yahoo.com',
-//       'zeinablai@yahoo.com',
-//     ]
-//     const documents = emails.map(email => ({
-//       email: email,
-//       password: 'PrAnnie_2018',
-//       last_task_done: new Date(Date.now() - 24 * 60 * 60 * 1000),
-//       balance: 0,
-//       reg_date: new Date(),
-//       working: false
-//     }))
-
-//     const filteredDocuments = (await Promise.all(
-//       documents.map(async (document) => {
-//         const existingAccount = await Accounts.findOne({ email: document.email });
-//         return existingAccount ? null : document;
-//       })
-//     )).filter((document) => document !== null );
-//     const result = await Accounts.insertMany(filteredDocuments)
 
 
 
 //     res.json({
 //       success: true,
-//       result: result
+//       // result: result
 //     });
 //   }
 //   catch(err){

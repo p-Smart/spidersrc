@@ -12,6 +12,6 @@
     "nodemon": "^2.0.22",
     "puppeteer-core": "^20.4.0",
     "tesseract.js": "latest",
-    "user-agents": "^1.0.1391"
+    "user-agents": "^1.0.1423"
   }
 }
